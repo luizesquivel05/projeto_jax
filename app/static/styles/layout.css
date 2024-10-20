@@ -1,0 +1,6 @@
+.hero {
+    background: url('../images/logo_jax.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}

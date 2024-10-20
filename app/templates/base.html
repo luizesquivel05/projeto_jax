@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% if title %}
+            ProjetoJAX | {{ title }}
+        {% else %}
+            ProjetoJAX
+        {% endif %}
+    </title>
+    <link rel="icon" href="{{ url_for('static', filename='images/logo_jax.jpg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/header.css') }}">
+    {% block styles %}{% endblock %}
+</head>
+<body>
+    <header>
+        <h1 id="logo">ProjetoJAX</h1>
+        <nav id="navbar" class="hidden">
+            <ul>
+                <li><a href="{{ url_for('main.home') }}">Home</a></li>
+                <li><a href="{{ url_for('main.sobre') }}">Sobre</a></li>
+                <li><a href="{{ url_for('main.galeria') }}">Galeria</a></li>
+                <li><a href="{{ url_for('main.contato') }}">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Projeto JAX. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='scripts/scripts.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/utils.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
