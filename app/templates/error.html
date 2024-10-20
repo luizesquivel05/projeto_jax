@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="error_jax">
+    <h2 id="titulo_error">
+        Opa, algo deu errado...
+    </h2>
+    <h4 id="descricao_error">
+
+        Tente recarregar a página ou volte para a <a href="{{  url_for('main.home') }}">página inicial</a>. <br>
+
+        Se o problema persistir, entre em contato com o suporte. <br>
+
+        Detalhes:
+        {{ error }}
+
+    </h4>
+</div>
+
+{% endblock %}
