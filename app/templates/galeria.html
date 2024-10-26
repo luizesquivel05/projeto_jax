@@ -6,9 +6,23 @@
     <h2 id="titulo_galeria">
         Descubra momentos especiais com nossos alunos e professores na galeria de fotos do Jax
     </h2>
-    <h4 id="descricao_galeria">
+    <div id="descricao_galeria">
 
-    </h4>
+        <div id="carrosel">
+
+            <div class="carrosel_galeria">
+
+                <img src="{{ url_for('static', filename='images/logo_jax.jpg') }}" alt="capa do carrosel" class="capa">
+
+            </div>
+
+            <button class="anterior_galeria" title="Voltar para imagem anterior"> &lt; </button>
+            <button class="proximo_galeria" title="Ir para próxima imagem"> &gt; </button>
+
+        </div>
+
+    </div>
 </div>
+
 
 {% endblock %}

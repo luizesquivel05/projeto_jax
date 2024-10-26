@@ -34,3 +34,7 @@ def historia():
 @main.route('/funcionalidades')
 def funcionalidades():
     return render_template('funcionalidades.html', title='Funcionalidades')
+
+@main.route('/documento')
+def documento():
+    return render_template('documento.html', title='Documentacao')

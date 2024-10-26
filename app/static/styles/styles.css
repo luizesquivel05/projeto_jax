@@ -41,3 +41,16 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+#historia_lista {
+    list-style: none;
+}
+
+#historia_lista li {
+    margin-top: 10px;
+}
+
+.funcionalidades_img {
+    width: 450px;
+    height: 450px;
+}

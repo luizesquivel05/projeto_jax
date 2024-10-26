@@ -2,41 +2,28 @@
 
 {% block content %}
 
-<div id="objetivo_jax">
-    <h2 id="titulo_objetivo">
-        Objetivo
-    </h2>
-    <h4 id="descricao_objetivo">
-        Auxiliar jovens a saírem da condição nem-nem.
-    </h4>
-</div>
-
-<div id="contexto_jax">
-    <h2 id="titulo_contexto">
-        Contexto do ProjetoJAX
-    </h2>
-    <h4 id="descricao_contexto">
-        De acordo com a Agência Brasil ( portal de notícias oficiais do Governo Federal do Brasil ), o número de jovens entre 14 e 24 anos na condição de que nem estudam e nem trabalham ficou em 4,5 milhões. Um recuo de 0,95% em relação ao mesmo trimestre de 2023, quando 4,8 milhões de jovens não estavam estudando nem trabalhando.
-
-    </h4>
-</div>
-
 <div id="funcionalidade_jax">
     <h2 id="titulo_funcionalidade">
         Funcionalidades do ProjetoJAX
     </h2>
-    <h4 id="funcionalidade1">
-        Cursos (programas oferecidos por instituções parceiras com objetivo de ensinar habilidades, conhecimentos e competências específicas)
-    </h4>
-    <h4 id="funcionalidade2">
-        Bootcamps (trilhas de ensinamento, formada por sequência de cursos e desafios para formar estudantes em áreas específicas)
-    </h4>
-    <h4 id="funcionalidade3">
-        Minigames Pixelados (jogos eletrônicas que utilizam pixel art, com aparência retrô e simplificada)
-    </h4>
-    <h4 id="funcionalidade4">
-        Fóruns Onlines ( plataformas de discussão na internet onde pessoas com interesses comuns podem se reunir para trocar informações, ideias e opiniões )
-    </h4>
+
+    <figure class="funcionalidadesfigure ativa" id="funcionalidade1">
+        <img src="{{ url_for('static', filename='images/funcionalidades/cursos_jax.png') }}" alt="Cursos do ProjetoJAX" class="funcionalidades_img">
+        <figcaption>Cursos (programas oferecidos por instituções parceiras com objetivo de ensinar habilidades, conhecimentos e competências específicas)</figcaption>
+    </figure>
+    <figure class="funcionalidadesfigure" id="funcionalidade2">
+        <img src="{{ url_for('static', filename='images/funcionalidades/bootcamps_jax.png') }}" alt="Bootcamps do ProjetoJAX" class="funcionalidades_img">
+        <figcaption>Bootcamps (trilhas de ensinamento, formada por sequência de cursos e desafios para formar estudantes em áreas específicas)</figcaption>
+    </figure>
+    <figure class="funcionalidadesfigure" id="funcionalidade3">
+        <img src="{{ url_for('static', filename='images/funcionalidades/minigames_jax.png') }}" alt="Minigames do ProjetoJAX" class="funcionalidades_img">
+        <figcaption>Minigames Pixelados (jogos eletrônicas que utilizam pixel art, com aparência retrô e simplificada)</figcaption>
+    </figure>
+    <figure class="funcionalidadesfigure" id="funcionalidade4">
+        <img src="{{ url_for('static', filename='images/funcionalidades/foruns_jax.png') }}" alt="Foruns do ProjetoJAX" class="funcionalidades_img">
+        <figcaption>Fóruns Onlines (plataformas de discussão na internet onde pessoas com interesses comuns podem se reunir para trocar informações, ideias e opiniões)</figcaption>
+    </figure>
+
 </div>
 
 {% endblock %}
