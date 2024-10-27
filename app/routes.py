@@ -4,7 +4,7 @@ main = Blueprint("main", __name__)
 
 @main.route('/google-site-verification=<token>.html')
 def google_verification():
-    return send_from_directory('statics', 'google-site-verification=OoaVt6jNPKKCO9AiGsIeFX3_muqcrkHbLgRui2LYSRg.html')
+    return send_from_directory('templates', 'google-site-verification=OoaVt6jNPKKCO9AiGsIeFX3_muqcrkHbLgRui2LYSRg.html')
 
 @main.route("/<path:path>")
 def jax_services(path):
