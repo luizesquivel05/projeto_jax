@@ -8,7 +8,7 @@ def google_verification():
 
 @main.route('/sitemap')
 def sitemap():
-    return render_template('sitemap_projetoJAX.xml')
+    return render_template('sitemap.xml')
 
 @main.route("/<path:path>")
 def jax_services(path):
