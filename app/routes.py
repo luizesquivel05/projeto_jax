@@ -6,6 +6,10 @@ main = Blueprint("main", __name__)
 def google_verification():
     return render_template('google-site-verification=OoaVt6jNPKKCO9AiGsIeFX3_muqcrkHbLgRui2LYSRg.html')
 
+@main.route('/sitemap')
+def sitemap():
+    return render_template('sitemap_projetoJAX.xml')
+
 @main.route("/<path:path>")
 def jax_services(path):
     try:
