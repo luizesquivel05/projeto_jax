@@ -4,12 +4,15 @@ main = Blueprint("main", __name__)
 
 @main.route('/google-site-verification=<token>.html')
 def google_verification():
-    return send_from_directory('templates', 'google-site-verification=OoaVt6jNPKKCO9AiGsIeFX3_muqcrkHbLgRui2LYSRg.html')
+    return render_template('google-site-verification=OoaVt6jNPKKCO9AiGsIeFX3_muqcrkHbLgRui2LYSRg.html')
 
 @main.route("/<path:path>")
 def jax_services(path):
     try:
-        return render_template(f'{path}.html')
+        if '.html' not in path:
+            return render_template(f'{path}.html')
+        else:
+            return render_template(f'{path}')
     except Exception as e:
         if '.html' in str(e):
             return render_template('error.html', title="ERROR", error=f"Página ( {str(e)} ) não encontrada")
