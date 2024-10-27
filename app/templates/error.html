@@ -8,13 +8,12 @@
     </h2>
     <h4 id="descricao_error">
 
-        Tente recarregar a página ou volte para a <a href="{{  url_for('main.home') }}">página inicial</a>. <br>
-
-        Se o problema persistir, entre em contato com o suporte. <br>
-
-        Detalhes:
-        {{ error }}
-
+        <ul>
+            <li>Tente recarregar a página ou volte para a <a href="{{  url_for('main.home') }}">página inicial</a>.</li>
+            <li>Se o problema persistir, entre em contato com o suporte.</li>
+            <li>Detalhes:</li>
+            <li>{{ error }}</li>
+        </ul>
     </h4>
 </div>
 

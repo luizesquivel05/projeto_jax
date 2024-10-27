@@ -1,42 +1,42 @@
 header {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo */
-    background-color: white; /* Cor de fundo do header */
-    color: black; /* Cor do texto */
+    align-items: center;
+    background-color: white;
+    color: black;
     padding: 20px;
 }
 
 #logo {
-    cursor: pointer; /* Adiciona o cursor de pointer para indicar que é clicável */
-    font-size: 2em; /* Tamanho da fonte do logo */
-    text-align: center; /* Centraliza o texto */
+    cursor: pointer; 
+    font-size: 2em; 
+    text-align: center; 
 }
 
 #navbar {
-    margin-top: 10px; /* Espaço entre o logo e o navbar */
-    transition: max-height 0.3s ease; /* Suaviza a transição de abertura */
+    margin-top: 10px; 
+    transition: max-height 0.3s ease; 
 }
 
 #navbar.hidden {
-    max-height: 0; /* Esconde o navbar */
-    overflow: hidden; /* Esconde o conteúdo que excede o espaço */
+    max-height: 0; 
+    overflow: hidden;
 }
 
 #navbar ul {
-    list-style: none; /* Remove a lista padrão */
-    padding: 0; /* Remove o padding */
+    list-style: none; 
+    padding: 0; 
 }
 
 #navbar li {
-    margin: 10px 0; /* Espaço entre os itens */
+    margin: 10px 0; 
 }
 
 #navbar a {
-    text-decoration: none; /* Remove o sublinhado */
-    color: black; /* Cor do link */
+    text-decoration: none; 
+    color: black; 
 }
 
 #navbar a:hover {
-    text-decoration: underline; /* Sublinha no hover */
+    text-decoration: underline;
 }
