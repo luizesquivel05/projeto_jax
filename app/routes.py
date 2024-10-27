@@ -13,7 +13,7 @@ def sitemap():
 @main.route("/<path:path>")
 def jax_services(path):
     try:
-        if '.html' not in path:
+        if '.html' not in path and 'sitemap' not in path:
             return render_template(f'{path}.html')
         if 'sitemap' in path:
             return render_template('sitemap.xml')
