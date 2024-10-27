@@ -15,6 +15,8 @@ def jax_services(path):
     try:
         if '.html' not in path:
             return render_template(f'{path}.html')
+        if 'sitemap' in path:
+            return render_template('sitemap.xml')
         else:
             return render_template(f'{path}')
     except Exception as e:
