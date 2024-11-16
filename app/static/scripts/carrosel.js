@@ -1,4 +1,4 @@
-const totalImagens = 2;
+const totalImagens = 4;
 const carrosselContainer = document.querySelector('.carrosel_galeria');
 const capa = document.querySelector('.capa');
 
