@@ -1,8 +1,8 @@
-# Projeto JAX - Aplicação WEB
+# JAX - Aplicação WEB
 
-## O projeto
+## O JAX
 
-- Trata-se da aplicação WEB que centraliza presença digital do ProjetoJAX. 
+- Trata-se da aplicação WEB que centraliza presença digital do JAX. 
 - Inicialmente se apresenta como Static_Web, contudo posteriormente irá evoluir [ o céu é o limite ]
 
 ## Stacks e tecnologias
