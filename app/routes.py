@@ -51,3 +51,49 @@ def funcionalidades():
 @main.route('/documento')
 def documento():
     return render_template('documento.html', title='Documentacao')
+
+@main.route("/jaxresume")
+def jaxresume():
+    from .utils import load_posts
+    return render_template("jaxresume.html", temas = load_posts(main)[0])
+
+@main.route("/jaxresume/<tema>")
+def temas(tema):
+    from .utils import load_posts
+    tema = str(tema).capitalize()
+    posts = load_posts(main)[1][tema]
+    if posts is None:
+        return render_template("error.html", title="ERROR", error="Tema não encontrado")
+    filtered_posts = [post for post in posts if post['theme'].lower() == tema.lower()]
+    if len(filtered_posts) == 0:
+        return render_template("error.html", title="ERROR", error="Tema não encontrado")
+    return render_template("lista_posts.html", posts=filtered_posts, tema=tema)
+
+@main.route("/jaxresume/post/<int:post_id>")
+def post(post_id):
+    from .utils import load_posts
+    post_id = int(post_id)
+    posts = load_posts(main)[2][post_id]
+    if posts is None:
+        return render_template("error.html", title="ERROR", error="Post não encontrado")
+    if post is None:
+        return render_template("error.html", title="ERROR", error="Post não encontrado")
+    return render_template("post_completo.html", post=posts)
+
+@main.route("/jaxresume/post/<post_id>/add_comment", methods=["POST"])
+def add_comment_route(post_id):
+    from flask import request
+    from .utils import add_comment, load_posts
+    author = request.form.get("author")
+    text = request.form.get("text")
+
+    if not author or not text:
+        return "Erro: Nome e texto do comentário são obrigatórios.", 400
+
+    try:
+        _ = add_comment(post_id, author, text, main)
+        post_id = int(post_id)
+        posts = load_posts(main)[2][post_id]
+        return render_template("post_completo.html", post=posts)
+    except FileNotFoundError as e:
+        return render_template("error.html", title="ERROR", error=str(e))

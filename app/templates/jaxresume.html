@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="home_jaxresume">
+    <div id="titulo_jaxresume">
+        <h1>
+            JAXResume
+        </h1>
+        <h2>
+            Qual tema mais te interessa?
+        </h2>
+    </div>
+    <div id="cards_jaxresume">
+        {% for tema in temas %}
+            <button class="jaxresume_home"> 
+                <a href="/jaxresume/{{tema.lower()}}" title="Ir para {{tema}}"> {{tema}} </a> 
+            </button>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

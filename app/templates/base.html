@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/layout.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/carrosel.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/jaxresume.css') }}">
     {% block styles %}{% endblock %}
 </head>
 <body>
@@ -38,6 +39,7 @@
         <nav id="navbar" class="hidden">
             <ul>
                 <li><a href="{{ url_for('main.home') }}">Home</a></li>
+                <li><a href="{{ url_for('main.jaxresume') }}">JAXResume</a></li>
                 <li><a href="{{ url_for('main.funcionalidades') }}">Funcionalidades</a></li>
                 <li><a href="{{ url_for('main.sobre') }}">Sobre</a></li>
                 <li><a href="{{ url_for('main.galeria') }}">Galeria</a></li>

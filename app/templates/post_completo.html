@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="post-full">
+        <div id="titulo_jaxresume">
+            <h1>
+                JAXResume
+            </h1>
+            <h2>
+                {{ post['title'] }}
+            </h2>
+            <h3>
+                {{ post['subtitle'] }}
+            </h3>
+        </div>
+        <div class="post-meta">
+            <p><strong>Autor:</strong> {{ post['author'] }} | <strong>Tema:</strong> {{ tema }} | <strong>Sub-tema:</strong> {{ post['subtheme'] }} | <strong>Publicado em:</strong> {{ post['date_published'] }}</p>
+            {% if post['date_edited'] %}
+                <p><strong>Última edição:</strong> {{ post['date_edited'] }}</p>
+            {% endif %}
+        </div>
+        <div class="post-image">
+            <img src="{{ url_for('static', filename='images/jax_resume/' + post['image']) }}" alt="{{ post['title'] }}">
+        </div>
+        <div class="post-content">
+            <p>{{ post['content'] | safe }}</p>
+        </div>
+        <div class="comments">
+            <h3>Comentários</h3>
+            {% if post['comments'] %}
+                {% for comment in post['comments'] %}
+                    <div class="comment">
+                        <div class="comment-logo">
+                            <img src="{{ url_for('static', filename='images/logo_jax.jpg') }}" alt="JAX Logo">
+                        </div>
+                        <div class="comment-details">
+                            <p><strong>{{ comment['author'] }}</strong> - {{ comment['date'] }}</p>
+                            <p>{{ comment['text'] }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="comment-details">
+                    <p><strong>Sem comentários</strong></p>
+                </div>
+            {% endif %}
+
+            <div class="add-comment">
+                <h3>Deixe seu comentário:</h3>
+                <form action="/jaxresume/post/{{ post['id'] }}/add_comment" method="POST">
+                    <label for="author">Nome:</label>
+                    <input type="text" id="author" name="author" required>
+                    <label for="text">Comentário:</label>
+                    <textarea id="text" name="text" rows="4" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

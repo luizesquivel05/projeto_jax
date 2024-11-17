@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="container">
+    <div id="titulo_jaxresume">
+        <h1>
+            JAXResume
+        </h1>
+        <h2>
+            {{ tema }} - Resumos
+        </h2>
+    </div>
+    {% for post in posts %}
+      <div class="post">
+        <div class="post-image-lista">
+          <img src="{{ url_for('static', filename='images/jax_resume/' + post['image']) }}" alt="{{ post['title'] }}">
+        </div>
+        <div class="post-details">
+          <h2>{{ post['title'] }}</h2>
+          <h3>{{ post['subtitle'].capitalize() }}</h3>
+          <p><strong>Autor:</strong> {{ post['author'] }} | <strong>Sub-tema:</strong> {{ post['subtheme'] }} | <strong>Data de publicação:</strong> {{ post['date_published'] }}</p>
+        </div>
+        <div class="post-read-more">
+          <a href="/jaxresume/post/{{post['id']}}">Ler</a>
+        </div>
+      </div>
+    {% endfor %}
+</div>
+{% endblock %}
